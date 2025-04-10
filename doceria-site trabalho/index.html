@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Doceria Delícias da Vó</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f0;
+      color: #4b2e2e;
+    }
+
+    header {
+      background-color: #f8c8dc;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+    }
+
+    header h1 {
+      margin-top: 10px;
+      font-size: 2em;
+    }
+
+    nav {
+      margin: 15px 0 20px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #4b2e2e;
+      font-weight: bold;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #a03a5e;
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .produto {
+      background-color: #fff;
+      border: 1px solid #f3c3d4;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .produto img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .sobre-img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #f8c8dc;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #a03a5e;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="imagens/banner.jpg">
+    <h1>Doceria Delícias da Vó</h1>
+    <nav>
+      <a href="#" onclick="mostrarSecao('produtos')">Produtos</a>
+      <a href="#" onclick="mostrarSecao('sobre')">Sobre Nós</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="produtos" class="active">
+      <h2>Nossos Produtos</h2>
+      <div class="produtos-grid">
+        <div class="produto">
+          <img src="imagens/brigadeiro.jpg">
+          <h3>Brigadeiro Clássico</h3>
+          <p>O tradicional doce de festa feito com chocolate belga.</p>
+        </div>
+        <div class="produto">
+          <img src="imagens/beijinho.jpg">
+          <h3>Beijinho de Coco</h3>
+          <p>Docinho de leite condensado com coco ralado e um toque de cravo.</p>
+        </div>
+        <div class="produto">
+          <img src="imagens/camafeu.jpg">
+          <h3>Camafeu de Nozes</h3>
+          <p>Um clássico refinado, envolto em fondant e decorado com noz.</p>
+        </div>
+        <div class="produto">
+          <img src="imagens/bolo.jpg">
+          <h3>Mini Bolo de Cenoura</h3>
+          <p>Com cobertura generosa de chocolate caseiro.</p>
+        </div>
+        <div class="produto">
+          <img src="imagens/trufa.jpg">
+          <h3>Trufa de Maracujá</h3>
+          <p>Recheada com creme de maracujá e envolta em chocolate branco.</p>
+        </div>
+        <div class="produto">
+          <img src="imagens/brownie.jpg">
+          <h3>Brownie da Vó</h3>
+          <p>Molhadinho por dentro, com pedacinhos de nozes e muito chocolate.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <h2>Nossa História</h2>
+      <img class="sobre-img" src="imagens/cozinha.jpg">
+      <p>A Delícias da Vó nasceu em uma pequena cozinha do interior de Minas Gerais, onde Dona Lurdes, carinhosamente conhecida como Vó Lurdes, começou a fazer doces para presentear os netos e vizinhos.</p>
+      <p>Com o tempo, os doces ganharam fama e começaram a ser vendidos em feirinhas locais. Em 2020, a família decidiu abrir a primeira loja, mantendo as receitas originais e todo o carinho da vó.</p>
+         </section>
+  </main>
+
+  <footer>
+    <p>Feito com ❤️ por Doceria Delícias da Vó</p>
+  </footer>
+
+  <script>
+    function mostrarSecao(secaoId) {
+      const secoes = document.querySelectorAll('main section');
+      secoes.forEach(secao => secao.classList.remove('active'));
+      document.getElementById(secaoId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
